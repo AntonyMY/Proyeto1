@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*font-family: sans-serif;*/
+}
+
+.container-header{
+    width: 100%;
+}
+
+/*Portada con imagen*/
+
+#container-portada{
+    width: 100%; /*Ocupe toda la panatalla horizontal*/
+    height: 400px;
+    position: relative;
+    background-image: url(../images/portada.jpg);
+    background-size: 200%; /*Para que cuando se redimensione la web tenga movimiento la imagen*/
+    animation: movimiento 10s infinite linear alternate; /*La animación durara 10 segundos*/
+    
+    /*y la duración será infinita*/
+    /*Linear la animación no se para bruscamente*/
+    /*con alternate la animación regresará o rebotara..y no se empezara denueo, tendrá una secuencia*/
+}
+/*@keyframes para controlar los pasos intermedios en una secuencia de animación css*/
+@keyframes movimiento{
+    /*La animación comenzara (from) hasta (to)*/
+    from{
+        /*Comenzará de abajo hacia izquierda*/
+        background-position: bottom left;
+    }to{
+        /*Termina de arriba hacia la izquierda*/
+        background-position: top right;
+    }
+}
+
+#capa-gradient{
+    width: 100%;
+    height: 100%;
+    /*position: absolute;*/
+    background: -webkit-linear-gradient(left, black,#0672d0);
+    /*El degradado comenzara de izquierda a derecha*/
+    opacity: 0.5;
+}

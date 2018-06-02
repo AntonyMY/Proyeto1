@@ -1,7 +1,9 @@
-*{
+body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    width: 100%;
+    height: 100%;
     /*font-family: sans-serif;*/
 }
 
@@ -81,12 +83,9 @@
     transition: background 300ms; /*cuando acerque el boton se generar la transición para cambiar el color de fondo*/
     cursor: pointer;
 }
+
 /*Cuando pase el raton por el botom*/
 .detalle button:hover{
     background: white;
     color: black;
-}
-
-.btnlogin{
-    width: 100%;
 }

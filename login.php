@@ -1,7 +1,7 @@
 <?php
     //Conexion
     //es idéntica a require excepto que PHP verificará si el archivo ya ha sido incluido y si es así, no se incluye (require) de nuevo.
-    require_once 'db_connect.php';
+    require_once 'php/db_connect.php';
 
     //Sesiones
     //crea una sesión o reanuda la actual basada en un identificador de sesión pasado mediante una petición GET o POST, o pasado mediante una cookie.
@@ -15,7 +15,7 @@
     endif;
 
     if(empty($login) or empty($passw)):
-        $error[] = "<li>Ingrese el Usuario/Contraseña</li>";
+        $error[] = "<br><li class='light' align='center'>Ingrese el Usuario/Contraseña</li>";
     else:
         $sql = "select login from usuario where login = '$login'";
         $resultado = mysqli_query($connect,$sql);
@@ -28,12 +28,13 @@
             if(mysqli_num_rows($resultado) == 1):
                 //$datos = mysqli_fecth_array($resultado);
                 $datos =  $resultado->fetch_assoc();
-                $_SESSION['conectado'] = true;
-                $_SESSION['id_usuario'] = $datos['idusuario'];
+                $_SESSION['conectado']   = true;
+                $_SESSION['id_usuario']  = $datos['idusuario'];
+                $_SESSION['des_usuario'] = $datos['nombre'];
                 /*while($datos= $resultado->fectch_assoc()){
                     echo $
                 }*/
-                header('Location: registro.php');
+                header('Location: php/linea.php');
             else:
                 $error[]="<li>Contraseña Ingresada es incorrecta</li>";
             endif;
@@ -70,7 +71,7 @@
         <div class="container-header">
             <nav class="light-blue lighten-1" role="navigation">
                 <div class="nav-wrapper container">
-                    <a id="logo-container" href="#" class="brand-logo">Materialize</a>
+                    <a id="logo-container" href="#" class="brand-logo">COMERCIALIZA</a>
                     <!--ul>li*3>a[href="#"]>{Menu $}-->
                     <ul class="right hide-on-med-and-down">
                         <li><a href="index.html">Inicio</a></li>

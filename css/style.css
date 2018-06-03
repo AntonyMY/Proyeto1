@@ -17,8 +17,8 @@ body{
     width: 100%; /*Ocupe toda la panatalla horizontal*/
     height: 400px;
     position: relative;
-    background-image: url(../images/portada.jpg);
-    background-size: 200%; /*Para que cuando se redimensione la web tenga movimiento la imagen*/
+    background-image: url(../images/portatil.jpg);
+    background-size: 100%; /*Para que cuando se redimensione la web tenga movimiento la imagen*/
     animation: movimiento 10s infinite linear alternate; /*La animación durara 10 segundos*/
     /*y la duración será infinita*/
     /*Linear la animación no se para bruscamente*/

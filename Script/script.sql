@@ -17,6 +17,7 @@ DROP TABLE IF EXISTS linea;
 CREATE TABLE linea (
   idlinea int(11) NOT NULL AUTO_INCREMENT,
   nombre varchar(80) NOT NULL,
+  descripcion varchar(80) NOT NULL,
   PRIMARY KEY (idlinea)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -26,6 +27,7 @@ DROP TABLE IF EXISTS marca;
 CREATE TABLE marca (
   idmarca int(11) NOT NULL AUTO_INCREMENT,
   nombre varchar(50) NOT NULL,
+  descripcion varchar(80) NOT NULL,
   PRIMARY KEY (idmarca)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -50,7 +52,18 @@ CREATE TABLE producto (
 
 
 USE bdtrabajo;
-select * from usuario;
 insert into usuario values (NULL,'Antony Monteza Ypanaque','AntonyUser',MD5('tony123'));
 insert into usuario values (NULL,'Christian Mori Siesquen','ChritianUser',MD5('cris123'));
 insert into usuario values (NULL,'Aldo Llatas Ontaneda','AldoUser',MD5('aldo123'));
+
+USE bdtrabajo;
+select * from usuario;
+
+USE bdtrabajo;
+insert into linea values (NULL,'Antitraspirantes','Todos los desodorantes');
+insert into linea values (NULL,'Televisores Smart','Linea General de TV inteleigentes');
+insert into linea values (NULL,'Abarrotes','Linea de verduras en general');
+
+USE bdtrabajo;
+update linea set nombre='Televisores Smart', descripcion='Linea General de TV inteleigentes' where idlinea=2;
+select * from linea;
